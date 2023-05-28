@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+@section Styles
+    {
+    <style>
+        #form {
+            margin: auto;
+        }
+
+        .col-2 {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        label {
+            text-align: center;
+            margin-top: 7px
+        }
+
+    </style>
+}
+
+
+<div class="col-md-4" id="form">
+    <div id="form" class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">會員登入</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-controller="Home" asp-action="Login">
+
+                    <div class="card-body">
+                        <p id="loginErr" style="color:red">@ViewBag.LoginErr</p>
+                        <div class="row mt-2">
+                            <div class="col-2">
+                                <label>帳號</label>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" name="txtAccount" id="txtAccount" class="form-control" placeholder="請輸入手機號碼">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-2">
+                                <label>密碼</label>
+                            </div>
+                            <div class="col-10">
+                                <input type="password" name="txtPassword" id="txtPassword" class="form-control" placeholder="請輸入密碼">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-md-offset-0  ">
+                                <input type="button" value="加入會員" class="btn btn-warning float-right" />
+                            </div>
+                            <div class="col-md-offset-0 ">
+                                <input type="submit" value="登入" class="btn btn-warning float-right" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light text-muted text-center py-2">
+                        @*<p class=" mb-0">© 2023 護 Care V3.</p>*@
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
